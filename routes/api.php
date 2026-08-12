@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\WorkSpaceMemberController;
+use \App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return response()->json([
@@ -19,6 +20,9 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
+
+    Route::get('profile', [ProfileController::class, 'show']);
+    Route::post('profile', [ProfileController::class, 'update']);
 
     Route::apiResource('workspace', WorkspaceController::class);
     Route::post('invitations/{token}/accept', [WorkSpaceMemberController::class, 'acceptInvitation']);
