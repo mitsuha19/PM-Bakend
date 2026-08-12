@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WorkspaceController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\CheckWorkSpaceAccess;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\WorkSpaceMemberController;
